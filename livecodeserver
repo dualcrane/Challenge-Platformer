@@ -1,0 +1,15 @@
+livecodeserver
+
+Copy
+# Open and read G-code file
+with open('duongdan/tep_gcode.gcode', 'r') as file:
+lines = file.readlines()
+
+# Remove last comment lines
+while lines[-1].strip().startswith(";"):
+lines.pop()
+
+# Write edited lines to a new file
+with open('duongdan/tep_gcode_moi.gcode', 'w') as file:
+for line in lines:
+file.write(line)
